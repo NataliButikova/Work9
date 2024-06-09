@@ -40,14 +40,6 @@ public class Radio {
         }
     }
 
-    public void nextVolume() {
-        if (currentVolume != 100) {
-            currentVolume++;
-        } else {
-            currentVolume = 0;
-        }
-    }
-
     public void prevStation() {
         if (currentStation != 0) {
             currentStation--;
@@ -56,13 +48,16 @@ public class Radio {
         }
     }
 
-    public void prevVolume() {
-        if (currentVolume != 0) {
-            currentVolume--;
-        } else {
-            currentVolume = 100;
+    public void nextVolume() {
+        if (currentVolume < 100) {
+            currentVolume = currentVolume + 1;
         }
     }
 
+    public void prevVolume() {
+        if (currentVolume > 0) {
+            currentVolume = currentVolume - 1;
+        }
+    }
 }
 
